@@ -6,6 +6,9 @@ import java.util.Date;
 public class UserTaskAction {
     boolean done = false;
     Date actionTime;
+    public UserTaskAction(Date actionTime){
+        this.actionTime = actionTime;
+    }
     public boolean isDone() {
         return done;
     }

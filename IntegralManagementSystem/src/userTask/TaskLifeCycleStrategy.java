@@ -4,5 +4,5 @@ import java.util.List;
 
 public abstract class TaskLifeCycleStrategy {
     boolean shouldFinish;
-    abstract boolean taskFinished(List<UserTaskAction> useTaskActionList);
+    public abstract boolean taskFinished(List<UserTaskAction> useTaskActionList);
 }

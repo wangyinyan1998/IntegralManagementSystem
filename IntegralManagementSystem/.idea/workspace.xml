@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="758e4af1-4062-463f-9390-b443531f9fc8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/userTask/TaskDef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/userTask/UserTaskAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/userTask/UserTaskStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transaction/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transaction/ConsumerTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transaction/Flow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transaction/PerformTaskTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transaction/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userTask/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/TaskPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/TaskPerformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userTask/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userTask/UserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userTask/UserTaskAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userTask/UserTaskAction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,45 +24,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DailyCountDownLifeCycleStrategy.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/userTask/DailyCountDownLifeCycleStrategy.java">
+      <file leaf-file-name="ConsumerTransaction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/transaction/ConsumerTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="626">
+              <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#161#162#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-                <element signature="e#262#263#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FixPointStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/FixPointStrategy.java">
+      <file leaf-file-name="TaskPerformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/user/TaskPerformer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="296">
+              <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
-                <element signature="e#150#151#0" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
-                <element signature="e#136#137#0" expanded="true" />
-                <element signature="e#164#165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OnceLifeCycleStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/OnceLifeCycleStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-              <folding>
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#140#141#0" expanded="true" />
+                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#207#208#0" expanded="true" />
+                <element signature="e#239#240#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#389#390#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,18 +64,69 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TotalCountDownLifeCycleStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/TotalCountDownLifeCycleStrategy.java">
+      <file leaf-file-name="TaskLifeCycleStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="132">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnceLifeCycleStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userTask/OnceLifeCycleStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
               <folding>
-                <element signature="e#145#146#0" expanded="true" />
-                <element signature="e#173#174#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#246#247#0" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
-                <element signature="e#260#261#0" expanded="true" />
+                <element signature="e#190#191#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transaction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/transaction/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FixPointStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userTask/FixPointStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="e#122#123#0" expanded="true" />
+                <element signature="e#150#151#0" expanded="true" />
+                <element signature="e#189#190#0" expanded="true" />
+                <element signature="e#223#224#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userTask/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+              <folding>
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="e#268#269#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,74 +135,38 @@
       <file leaf-file-name="UserTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/userTask/UserTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
-              <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="682">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
                 <element signature="e#514#515#0" expanded="true" />
                 <element signature="e#550#551#0" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
                 <element signature="e#665#666#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#772#773#0" expanded="true" />
-                <element signature="e#990#991#0" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
                 <element signature="e#1248#1249#0" expanded="true" />
                 <element signature="e#1289#1290#0" expanded="true" />
                 <element signature="e#1472#1473#0" expanded="true" />
                 <element signature="e#1501#1502#0" expanded="true" />
                 <element signature="e#1553#1554#0" expanded="true" />
                 <element signature="e#1589#1590#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskPerformer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/TaskPerformer.java">
+      <file leaf-file-name="UserTaskAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userTask/UserTaskAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTaskStatus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/UserTaskStatus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskDef.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/TaskDef.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            <state relative-caret-position="190">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding>
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#179#180#0" expanded="true" />
-                <element signature="e#211#212#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#180#181#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskLifeCycleStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -182,10 +188,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/UserTask.java" />
         <option value="$PROJECT_DIR$/src/TaskLifeCycleStrategy.java" />
-        <option value="$PROJECT_DIR$/src/userTask/UserTaskAction.java" />
         <option value="$PROJECT_DIR$/src/userTask/TaskPerformer.java" />
-        <option value="$PROJECT_DIR$/src/user/TaskPerformer.java" />
-        <option value="$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java" />
         <option value="$PROJECT_DIR$/src/userTask/OnceLifeCycleStrategy.java" />
         <option value="$PROJECT_DIR$/src/userTask/TotalCountDownLifeCycleStrategy.java" />
         <option value="$PROJECT_DIR$/src/userTask/DailyCountDownLifeCycleStrategy.java" />
@@ -193,8 +196,17 @@
         <option value="$PROJECT_DIR$/src/userTask/FixPointStrategy.java" />
         <option value="$PROJECT_DIR$/src/userTask/DynamicPointCalcStrategy.java" />
         <option value="$PROJECT_DIR$/src/userTask/UserTaskStatus.java" />
-        <option value="$PROJECT_DIR$/src/userTask/UserTask.java" />
         <option value="$PROJECT_DIR$/src/userTask/TaskDef.java" />
+        <option value="$PROJECT_DIR$/src/transaction/PerformTaskTransaction.java" />
+        <option value="$PROJECT_DIR$/src/transaction/Flow.java" />
+        <option value="$PROJECT_DIR$/src/transaction/Account.java" />
+        <option value="$PROJECT_DIR$/src/userTask/UserTask.java" />
+        <option value="$PROJECT_DIR$/src/userTask/Task.java" />
+        <option value="$PROJECT_DIR$/src/user/TaskPerformer.java" />
+        <option value="$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java" />
+        <option value="$PROJECT_DIR$/src/userTask/UserTaskAction.java" />
+        <option value="$PROJECT_DIR$/src/transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/transaction/ConsumerTransaction.java" />
       </list>
     </option>
   </component>
@@ -236,6 +248,12 @@
               <item name="IntegralManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="IntegralManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IntegralManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IntegralManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="transaction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IntegralManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -346,15 +364,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577421041914</updated>
-      <workItem from="1577421052895" duration="7967000" />
+      <workItem from="1577421052895" duration="15079000" />
     </task>
+    <task id="LOCAL-00001" summary="上传第一次代码">
+      <created>1577430916108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577430916108</updated>
+    </task>
+    <task id="LOCAL-00002" summary="上传第一次代码">
+      <created>1577430951389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577430951389</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7967000" />
+    <option name="totallyTimeSpent" value="15079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -369,7 +403,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3292683" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.24734694" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.23673469" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info id="Structure" order="1" sideWeight="0.5039788" side_tool="true" weight="0.15521424" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -391,6 +425,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="上传第一次代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传第一次代码" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
@@ -459,34 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/UserTaskAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#102#103#0" expanded="true" />
-            <element signature="e#129#130#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/OnceLifeCycleStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding>
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userTask/DynamicPointCalcStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -502,13 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/TaskPerformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -528,20 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/TaskPointCalcStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userTask/TotalCountDownLifeCycleStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -557,57 +546,193 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/UserTask.java">
+    <entry file="file://$PROJECT_DIR$/src/userTask/DailyCountDownLifeCycleStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="506">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transaction/Flow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding>
+            <element signature="e#132#133#0" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transaction/PerformTaskTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transaction/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userTask/FixPointStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        <state relative-caret-position="198">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
+            <element signature="e#122#123#0" expanded="true" />
             <element signature="e#150#151#0" expanded="true" />
             <element signature="e#189#190#0" expanded="true" />
             <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userTask/DailyCountDownLifeCycleStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/userTask/OnceLifeCycleStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="176">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userTask/UserTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#161#162#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userTask/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/TaskPerformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+          <folding>
+            <element signature="e#140#141#0" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userTask/TaskPointCalcStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userTask/TaskLifeCycleStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userTask/UserTaskAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding>
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transaction/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/transaction/ConsumerTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
