@@ -23,4 +23,9 @@ public class Flow {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    @Override
+    public String toString() {
+        return desc+" - "+amount;
+    }
 }

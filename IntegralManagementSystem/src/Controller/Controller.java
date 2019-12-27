@@ -1,11 +1,19 @@
 package Controller;
 
 import item.Item;
+import transaction.ConsumerTransaction;
+import transaction.Flow;
 import user.TaskPerformer;
 import userTask.Task;
+import userTask.UserTask;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class Controller {
     static ArrayList<Task> taskArrayList=new ArrayList<>();
@@ -35,12 +43,16 @@ public class Controller {
                 case "fd":
                     break;
                 case "account":
+                    checkAccount(input.next());
                     break;
                 case "flow":
+                    checkFlow(input.next());
                     break;
                 case "item":
+                    newItem(input.next(),input.nextInt());
                     break;
                 case "consume":
+                    consume(input.next(),input.next());
                     break;
             }
         }
@@ -66,10 +78,59 @@ public class Controller {
         }
         return null;
     }
-//    public static void consume(String username,String itemname){
-//        TaskPerformer taskPerformer;
-//        for (TaskPerformer tempPerformer:taskPerformers){
-//            if (taskPerformer)
-//        }
-//    }
+    public static void consume(String username,String itemname){
+        TaskPerformer taskPerformer=findTaskPerformer(username);
+        Item item = findItem(itemname);
+        ConsumerTransaction transaction = new ConsumerTransaction();
+        if (transaction.commit(item,taskPerformer)) {
+            System.out.println("您的商品已兑换~");
+        }else {
+            System.out.println("您的商品兑换失败啦");
+        }
+    }
+    public static void newItem(String itemname,int cost){
+        Item fdItem = findItem(itemname);
+        if (fdItem==null) {
+            Item item = new Item(itemname, itemname, cost);
+            items.add(item);
+        }
+        System.out.println("您的商品新建成功啦");
+    }
+    public static void checkFlow(String username){
+        TaskPerformer taskPerformer = findTaskPerformer(username);
+        List<Flow> flows = taskPerformer.getAccount().getFlows();
+        for (Flow flow:flows){
+            System.out.println(flow);
+        }
+        System.out.println("您的流水线已显示完全啦");
+    }
+    public static void checkAccount(String username){
+        TaskPerformer taskPerformer = findTaskPerformer(username);
+        System.out.println(taskPerformer.getAccount().getBalance());
+        System.out.println("您的积分已显示啦");
+    }
+    public static void findCanDoTask(String username){
+        ArrayList<Task> canDoTaskList = new ArrayList<>();
+        for (Task task:taskArrayList){
+            canDoTaskList.add(task);
+        }
+        TaskPerformer taskPerformer = findTaskPerformer(username);
+        ArrayList<UserTask> userTaskArrayList = new ArrayList<>();
+        try{
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("usertask.txt")));
+            userTaskArrayList = (ArrayList<UserTask>)ois.readObject();
+            ois.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        for (UserTask userTask:userTaskArrayList){
+            if (userTask.getTaskPerformer().equals(taskPerformer) && !userTask.canDo()) {
+                canDoTaskList.remove(userTask.getTask());
+            }
+        }
+        System.out.println("您的待完成任务有：");
+        for (Task task:canDoTaskList){
+            System.out.println(task.getTaskDef().getName());
+        }
+    }
 }

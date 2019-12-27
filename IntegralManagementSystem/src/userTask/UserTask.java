@@ -47,4 +47,8 @@ public class UserTask {
     public void setTask(Task task) {
         this.task = task;
     }
+
+    public boolean canDo(){
+        return !task.getTaskLifeCycleStrategy().taskFinished(userTaskActionList);
+    }
 }

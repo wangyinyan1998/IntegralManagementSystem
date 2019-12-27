@@ -55,7 +55,7 @@ public class PerformTaskTransaction extends Transaction {
     }
 
 
-    boolean commit(Task task,TaskPerformer taskPerformer){
+    public boolean commit(Task task,TaskPerformer taskPerformer){
         boolean iscommit = preCommit(task,taskPerformer);
         if (iscommit)
             addFlow(taskPerformer,task.getTaskPointCalcStrategy().calcPoint(),task.getTaskDef().getName());
