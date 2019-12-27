@@ -4,6 +4,10 @@ public class Flow {
     int amount;
     String desc;
 
+    public Flow(String desc,int amount){
+        this.desc = desc;
+        this.amount = amount;
+    }
     public int getAmount() {
         return amount;
     }

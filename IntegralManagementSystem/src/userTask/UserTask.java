@@ -1,5 +1,6 @@
 package userTask;
 
+import org.omg.PortableInterceptor.ACTIVE;
 import user.TaskPerformer;
 
 import java.util.List;
@@ -8,7 +9,12 @@ public class UserTask {
     Task task;
     TaskPerformer taskPerformer;
     List<UserTaskAction> userTaskActionList;
-    UserTaskStatus status;
+    UserTaskStatus status=UserTaskStatus.ACTIVE;
+    public UserTask(TaskPerformer taskPerformer,Task task,List<UserTaskAction> userTaskActionList){
+        this.task = task;
+        this.userTaskActionList=userTaskActionList;
+        this.taskPerformer = taskPerformer;
+    }
     public TaskPerformer getTaskPerformer() {
         return taskPerformer;
     }
