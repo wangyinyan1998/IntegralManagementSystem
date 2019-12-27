@@ -45,9 +45,31 @@ public class Controller {
             }
         }
     }
-
-//    public static TaskPerformer newTaskPerformer(String name){
-//        TaskPerformer taskPerformer = new TaskPerformer()
+    private static TaskPerformer findTaskPerformer(String username){
+        for (TaskPerformer taskPerformer:taskPerformers){
+            if (taskPerformer.getName().equals(username))
+                return taskPerformer;
+        }
+        return null;
+    }
+    private static Item findItem(String itemname){
+        for (Item item:items){
+            if (item.getName().equals(itemname))
+                return item;
+        }
+        return null;
+    }
+    private static Task findTask(String taskname){
+        for (Task task:taskArrayList){
+            if (task.getTaskDef().getName().equals(taskname))
+                return task;
+        }
+        return null;
+    }
+//    public static void consume(String username,String itemname){
+//        TaskPerformer taskPerformer;
+//        for (TaskPerformer tempPerformer:taskPerformers){
+//            if (taskPerformer)
+//        }
 //    }
-//    public static
 }
