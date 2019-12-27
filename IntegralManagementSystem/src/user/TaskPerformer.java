@@ -6,6 +6,11 @@ public class TaskPerformer {
     String name;
     Account account;
 
+    public TaskPerformer(String name, Account account) {
+        this.name = name;
+        this.account = account;
+    }
+
     public String getName() {
         return name;
     }
@@ -24,7 +29,7 @@ public class TaskPerformer {
 
     @Override
     public boolean equals(Object obj) {
-        TaskPerformer taskPerformer = (TaskPerformer)obj;
+        TaskPerformer taskPerformer = (TaskPerformer) obj;
         return taskPerformer.getName().equals(this.name);
     }
 }

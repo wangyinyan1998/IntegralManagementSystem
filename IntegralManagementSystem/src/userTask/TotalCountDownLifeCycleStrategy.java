@@ -3,7 +3,6 @@ package userTask;
 import java.util.List;
 
 public class TotalCountDownLifeCycleStrategy extends TaskLifeCycleStrategy{
-    int count;
     public int getCount() {
         return count;
     }
@@ -13,7 +12,7 @@ public class TotalCountDownLifeCycleStrategy extends TaskLifeCycleStrategy{
     }
 
     @Override
-    boolean taskFinished(List<UserTaskAction> useTaskActionList) {
+    public boolean taskFinished(List<UserTaskAction> useTaskActionList) {
         return useTaskActionList.size()==count;
     }
 }

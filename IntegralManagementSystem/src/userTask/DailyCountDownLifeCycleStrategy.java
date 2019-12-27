@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 public class DailyCountDownLifeCycleStrategy extends TaskLifeCycleStrategy{
-    int count;
 
     public int getCount() {
         return count;
@@ -17,7 +16,7 @@ public class DailyCountDownLifeCycleStrategy extends TaskLifeCycleStrategy{
     }
 
     @Override
-    boolean taskFinished(List<UserTaskAction> useTaskActionList) {
+    public boolean taskFinished(List<UserTaskAction> useTaskActionList) {
         Date currentDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String dateCurrFormat = dateFormat.format(currentDate);

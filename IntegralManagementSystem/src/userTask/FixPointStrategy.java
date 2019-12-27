@@ -1,7 +1,6 @@
 package userTask;
 
 public class FixPointStrategy extends TaskPointCalcStrategy{
-    int point;
 
     public int getPoint() {
         return point;
