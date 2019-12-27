@@ -1,22 +1,22 @@
 package test;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class ControllerTest {
 
-    @org.junit.Test
+    @Test
     public void addUser() {
     }
 
-    @org.junit.Test
+    @Test
     public void addTask() {
     }
 
-    @org.junit.Test
+    @Test
     public void doTask() {
     }
 
-    @org.junit.Test
+    @Test
     public void consume() {
     }
 
@@ -28,11 +28,11 @@ public class ControllerTest {
     public void checkFlow() {
     }
 
-    @org.junit.Test
+    @Test
     public void checkAccount() {
     }
 
-    @org.junit.Test
+    @Test
     public void findCanDoTask() {
     }
 }
