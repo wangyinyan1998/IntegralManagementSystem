@@ -17,7 +17,21 @@ public class Controller {
     static ArrayList<TaskPerformer> taskPerformers = new ArrayList<>();
     static ArrayList<Item> items = new ArrayList<>();
 
+
+    public static ArrayList<Task> getTaskArrayList() {
+        return taskArrayList;
+    }
+
+    public static ArrayList<TaskPerformer> getTaskPerformers() {
+        return taskPerformers;
+    }
+
+    public static ArrayList<Item> getItems() {
+        return items;
+    }
+
     public static void addUser(String username) {
+
         Account account = new Account();
         taskPerformers.add(new TaskPerformer(username, account));
         System.out.println("用户 "+ username +" 添加成功");
