@@ -8,9 +8,6 @@ import transaction.PerformTaskTransaction;
 import user.TaskPerformer;
 import userTask.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,12 +20,15 @@ public class Controller {
     public static void addUser(String username) {
         Account account = new Account();
         taskPerformers.add(new TaskPerformer(username, account));
+        System.out.println("用户 "+ username +" 添加成功");
+
     }
 
     public static void addTask(Scanner input) {
-        System.out.println("请输入要创建的task的类型，如果是一次性task，请输入 once taskname point" +
-                "如果是可重复Task，请输入 repeat1 taskname point lifeCycle" +
-                "如果是每日可重复Task，请输入 repeat2 taskname point lifeCycle");
+        System.out.println("请输入要创建的task的类型，\n" +
+                "如果是一次性task，请输入 once taskname point \n" +
+                "如果是可重复Task，请输入 repeat1 taskname point lifeCycle \n" +
+                "如果是每日可重复Task，请输入 repeat2 taskname point lifeCycle \n");
         String instr = input.next();
         String taskName;
         int point;
@@ -53,6 +53,7 @@ public class Controller {
                 onceTask.setTaskDef(taskDef);
 
                 taskArrayList.add(onceTask);
+                System.out.println("一次性任务 "+ taskName +" 添加成功");
 
                 break;
             case "repeat1":
@@ -74,6 +75,8 @@ public class Controller {
                 totalCountTask.setTaskDef(taskDef);
 
                 taskArrayList.add(totalCountTask);
+                System.out.println("可重复任务 "+ taskName +" 添加成功");
+
 
                 break;
             case "repeat2":
@@ -95,6 +98,8 @@ public class Controller {
                 dailyTask.setTaskDef(taskDef);
 
                 taskArrayList.add(dailyTask);
+                System.out.println("按天可重复任务 "+ taskName +" 添加成功");
+
                 break;
         }
 
