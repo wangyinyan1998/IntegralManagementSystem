@@ -1,6 +1,4 @@
 package userTask;
-
-import org.omg.PortableInterceptor.ACTIVE;
 import user.TaskPerformer;
 
 import java.util.List;

@@ -157,7 +157,7 @@ public class Controller {
             System.out.println("您的用户信息找不到啦");
             return;
         }
-        System.out.println(taskPerformer.getAccount().getBalance());
+        System.out.println("account - "+taskPerformer.getAccount().getBalance());
         System.out.println("您的积分已显示啦");
     }
 
@@ -176,9 +176,13 @@ public class Controller {
                 canDoTaskList.remove(userTask.getTask());
             }
         }
-        System.out.println("您的待完成任务有：");
-        for (Task task : canDoTaskList) {
-            System.out.println(task.getTaskDef().getName());
+        if(canDoTaskList!=null && canDoTaskList.size()!=0) {
+            System.out.println("您的待完成任务有：");
+            for (Task task : canDoTaskList) {
+                System.out.println(task.getTaskDef().getName());
+            }
+        }else{
+            System.out.println("没有待完成的任务啦，享受清闲时光吧！");
         }
     }
 
