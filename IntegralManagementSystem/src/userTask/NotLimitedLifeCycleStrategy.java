@@ -2,7 +2,10 @@ package userTask;
 
 import java.util.List;
 
-public class TotalCountDownLifeCycleStrategy extends TaskLifeCycleStrategy{
+public class NotLimitedLifeCycleStrategy extends TaskLifeCycleStrategy{
+    public NotLimitedLifeCycleStrategy(){
+        count = Integer.MAX_VALUE;
+    }
     public int getCount() {
         return count;
     }

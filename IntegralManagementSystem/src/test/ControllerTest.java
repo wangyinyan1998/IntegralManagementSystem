@@ -9,7 +9,7 @@ import transaction.PerformTaskTransaction;
 import user.TaskPerformer;
 import userTask.DailyCountDownLifeCycleStrategy;
 import userTask.OnceLifeCycleStrategy;
-import userTask.TotalCountDownLifeCycleStrategy;
+import userTask.NotLimitedLifeCycleStrategy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -33,7 +33,7 @@ public class ControllerTest {
     }
 
     /*
-     * 对应用例1
+     * 对应难度级别2用例1
      * 测试增加新一次性的task*/
     @Test
     public void addOnceTask() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -50,26 +50,25 @@ public class ControllerTest {
     }
 
     /*
-     * 对应用例1
+     * 对应难度级别1用例1
      * 测试增加新的可重复性的task*/
     @Test
     public void addRepeat1Task() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Controller controller = new Controller();
-        Method method = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class, int.class);
+        Method method = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class);
         method.setAccessible(true);
         String taskName = "t1";
         int point = 2;
-        int count = 3;
+
         Controller.getTaskArrayList().clear();
         Assert.assertEquals(Controller.getTaskArrayList().size(), 0);
-        method.invoke(controller, taskName, point, count);
+        method.invoke(controller, taskName, point);
         Assert.assertEquals(Controller.getTaskArrayList().size(), 1);
-        Assert.assertEquals(Controller.getTaskArrayList().get(0).getTaskLifeCycleStrategy().getClass(), TotalCountDownLifeCycleStrategy.class);
-
+        Assert.assertEquals(Controller.getTaskArrayList().get(0).getTaskLifeCycleStrategy().getClass(), NotLimitedLifeCycleStrategy.class);
     }
 
     /*
-     * 对应用例1
+     * 对应难度级别2用例1
      * 测试增加新的按天可重复性的task（每天零点刷新）*/
     @Test
     public void addRepeat2Task() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -87,7 +86,7 @@ public class ControllerTest {
     }
 
     /*
-     * 对应用例2
+     * 对应难度级别1用例2
      * 测试查看可做任务
      * 测试做任务*/
     @Test
@@ -103,12 +102,11 @@ public class ControllerTest {
         int point = 2;
         method.invoke(controller, taskName, point);
         //添加新的可重复的Task
-        method = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class, int.class);
+        method = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class);
         method.setAccessible(true);
         taskName = "t2";
         point = 2;
-        int count = 2;
-        method.invoke(controller, taskName, point, count);
+        method.invoke(controller, taskName, point);
         //做任务前可做任务
         Assert.assertEquals(Controller.findCanDoTask("u1"), 2);
         Controller.doTask("t2", "u1");
@@ -116,15 +114,16 @@ public class ControllerTest {
         Assert.assertEquals(Controller.findCanDoTask("u1"), 2);
         Controller.doTask("t2", "u1");
         //做两次t2任务后的可做任务
-        Assert.assertEquals(Controller.findCanDoTask("u1"), 1);
+        Assert.assertEquals(Controller.findCanDoTask("u1"), 2);
         Controller.doTask("t1", "u1");
         //做一次t1任务后的可做任务
-        Assert.assertEquals(Controller.findCanDoTask("u1"), 0);
+        Assert.assertEquals(Controller.findCanDoTask("u1"), 1);
 
     }
 
 
     /**
+     * 对应难度级别2 用例2和难度级别1用例3
      * 测试消费商品
      * 2. App用户可以使用他账户中积分完成兑换，获取相关的商品，比如一杯可乐。
      *  并可以查看该用户的流水线信息和账户余额
@@ -171,6 +170,7 @@ public class ControllerTest {
     }
 
     /**
+     * 对应难度级别1用例2
      * 2. App用户查看可做的任务和任务的状态
      * @throws Exception
      */
@@ -194,12 +194,11 @@ public class ControllerTest {
         method.invoke(controller,taskname,point);
 
         //新增一个可做多次的任务
-        Method method1 = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class,int.class);
+        Method method1 = Controller.class.getDeclaredMethod("addRepeat1Task", String.class, int.class);
         method1.setAccessible(true);
         String taskname2 = "t2";
         int point2 =2;
-        int count = 3;
-        method1.invoke(controller,taskname2,point2,count);
+        method1.invoke(controller,taskname2,point2);
 
         //查看可做任务的信息
         Assert.assertTrue(Controller.findCanDoTask(username)==2);

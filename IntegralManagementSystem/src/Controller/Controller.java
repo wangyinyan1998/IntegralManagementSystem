@@ -41,7 +41,7 @@ public class Controller {
     public static void addTask(Scanner input) {
         System.out.println("请输入要创建的task的类型，\n" +
                 "如果是一次性task，请输入 once taskname point \n" +
-                "如果是可重复Task，请输入 repeat1 taskname point lifeCycle \n" +
+                "如果是可无限重复Task，请输入 repeat1 taskname point\n" +
                 "如果是每日可重复Task，请输入 repeat2 taskname point lifeCycle");
         String instr = input.next();
         String taskName;
@@ -59,9 +59,8 @@ public class Controller {
             case "repeat1":
                 taskName = input.next();
                 point = input.nextInt();
-                count = input.nextInt();
-                addRepeat1Task(taskName, point, count);
-                System.out.println("可重复任务 " + taskName + " 添加成功");
+                addRepeat1Task(taskName, point);
+                System.out.println("无限重复任务 " + taskName + " 添加成功");
 
                 break;
             case "repeat2":
@@ -228,7 +227,7 @@ public class Controller {
         taskArrayList.add(onceTask);
     }
 
-    private static void addRepeat1Task(String taskName, int point, int count) {
+    private static void addRepeat1Task(String taskName, int point) {
         TaskDef taskDef;
         FixPointStrategy fixPointStrategy;
         taskDef = new TaskDef();
@@ -237,11 +236,10 @@ public class Controller {
         fixPointStrategy = new FixPointStrategy();
         fixPointStrategy.setPoint(point);
 
-        TotalCountDownLifeCycleStrategy totalCountDownLifeCycleStrategy = new TotalCountDownLifeCycleStrategy();
-        totalCountDownLifeCycleStrategy.setCount(count);
+        NotLimitedLifeCycleStrategy notLimitedLifeCycleStrategy = new NotLimitedLifeCycleStrategy();
 
         Task totalCountTask = new Task();
-        totalCountTask.setTaskLifeCycleStrategy(totalCountDownLifeCycleStrategy);
+        totalCountTask.setTaskLifeCycleStrategy(notLimitedLifeCycleStrategy);
         totalCountTask.setTaskPointCalcStrategy(fixPointStrategy);
         totalCountTask.setTaskDef(taskDef);
 
