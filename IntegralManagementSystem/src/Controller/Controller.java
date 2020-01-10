@@ -34,7 +34,7 @@ public class Controller {
 
         Account account = new Account();
         taskPerformers.add(new TaskPerformer(username, account));
-        System.out.println("用户 "+ username +" 添加成功");
+        System.out.println("用户 " + username + " 添加成功");
 
     }
 
@@ -53,66 +53,25 @@ public class Controller {
         switch (instr) {
             case "once":
                 taskName = input.next();
-                taskDef = new TaskDef();
-                taskDef.setName(taskName);
-
                 point = input.nextInt();
-                fixPointStrategy = new FixPointStrategy();
-                fixPointStrategy.setPoint(point);
-
-                OnceLifeCycleStrategy onceLifeCycleStrategy = new OnceLifeCycleStrategy();
-                Task onceTask = new Task();
-                onceTask.setTaskLifeCycleStrategy(onceLifeCycleStrategy);
-                onceTask.setTaskPointCalcStrategy(fixPointStrategy);
-                onceTask.setTaskDef(taskDef);
-
-                taskArrayList.add(onceTask);
-                System.out.println("一次性任务 "+ taskName +" 添加成功");
+                addOnceTask(taskName, point);
+                System.out.println("一次性任务 " + taskName + " 添加成功");
 
                 break;
             case "repeat1":
                 taskName = input.next();
-                taskDef = new TaskDef();
-                taskDef.setName(taskName);
-
                 point = input.nextInt();
-                fixPointStrategy = new FixPointStrategy();
-                fixPointStrategy.setPoint(point);
-
                 count = input.nextInt();
-                TotalCountDownLifeCycleStrategy totalCountDownLifeCycleStrategy = new TotalCountDownLifeCycleStrategy();
-                totalCountDownLifeCycleStrategy.setCount(count);
-
-                Task totalCountTask = new Task();
-                totalCountTask.setTaskLifeCycleStrategy(totalCountDownLifeCycleStrategy);
-                totalCountTask.setTaskPointCalcStrategy(fixPointStrategy);
-                totalCountTask.setTaskDef(taskDef);
-
-                taskArrayList.add(totalCountTask);
-                System.out.println("可重复任务 "+ taskName +" 添加成功");
-
+                addRepeat1Task(taskName, point, count);
+                System.out.println("可重复任务 " + taskName + " 添加成功");
 
                 break;
             case "repeat2":
                 taskName = input.next();
-                taskDef = new TaskDef();
-                taskDef.setName(taskName);
-
                 point = input.nextInt();
-                fixPointStrategy = new FixPointStrategy();
-                fixPointStrategy.setPoint(point);
-
                 count = input.nextInt();
-                DailyCountDownLifeCycleStrategy dailyCountDownLifeCycleStrategy = new DailyCountDownLifeCycleStrategy();
-                dailyCountDownLifeCycleStrategy.setCount(count);
-
-                Task dailyTask = new Task();
-                dailyTask.setTaskLifeCycleStrategy(dailyCountDownLifeCycleStrategy);
-                dailyTask.setTaskPointCalcStrategy(fixPointStrategy);
-                dailyTask.setTaskDef(taskDef);
-
-                taskArrayList.add(dailyTask);
-                System.out.println("按天可重复任务 "+ taskName +" 添加成功");
+                addRepeat2Task(taskName, point, count);
+                System.out.println("按天可重复任务 " + taskName + " 添加成功");
 
                 break;
         }
@@ -176,7 +135,7 @@ public class Controller {
             System.out.println("您的用户信息找不到啦");
             return;
         }
-        System.out.println("account - "+taskPerformer.getAccount().getBalance());
+        System.out.println("account - " + taskPerformer.getAccount().getBalance());
         System.out.println("您的积分已显示啦");
     }
 
@@ -188,19 +147,19 @@ public class Controller {
             System.out.println("您的用户信息找不到啦");
             return;
         }
-        ArrayList<UserTask> userTaskArrayList =PerformTaskTransaction.getUserTaskArrayList();
+        ArrayList<UserTask> userTaskArrayList = PerformTaskTransaction.getUserTaskArrayList();
 
         for (UserTask userTask : userTaskArrayList) {
             if (userTask.getTaskPerformer().equals(taskPerformer) && !userTask.canDo()) {
                 canDoTaskList.remove(userTask.getTask());
             }
         }
-        if(canDoTaskList!=null && canDoTaskList.size()!=0) {
+        if (canDoTaskList != null && canDoTaskList.size() != 0) {
             System.out.println("您的待完成任务有：");
             for (Task task : canDoTaskList) {
                 System.out.println(task.getTaskDef().getName());
             }
-        }else{
+        } else {
             System.out.println("没有待完成的任务啦，享受清闲时光吧！");
         }
     }
@@ -229,5 +188,62 @@ public class Controller {
         return null;
     }
 
+    private static void addOnceTask(String taskName, int point) {
+        TaskDef taskDef;
+        FixPointStrategy fixPointStrategy;
+        taskDef = new TaskDef();
+        taskDef.setName(taskName);
+
+        fixPointStrategy = new FixPointStrategy();
+        fixPointStrategy.setPoint(point);
+
+        OnceLifeCycleStrategy onceLifeCycleStrategy = new OnceLifeCycleStrategy();
+        Task onceTask = new Task();
+        onceTask.setTaskLifeCycleStrategy(onceLifeCycleStrategy);
+        onceTask.setTaskPointCalcStrategy(fixPointStrategy);
+        onceTask.setTaskDef(taskDef);
+
+        taskArrayList.add(onceTask);
+    }
+
+    private static void addRepeat1Task(String taskName, int point, int count) {
+        TaskDef taskDef;
+        FixPointStrategy fixPointStrategy;
+        taskDef = new TaskDef();
+        taskDef.setName(taskName);
+
+        fixPointStrategy = new FixPointStrategy();
+        fixPointStrategy.setPoint(point);
+
+        TotalCountDownLifeCycleStrategy totalCountDownLifeCycleStrategy = new TotalCountDownLifeCycleStrategy();
+        totalCountDownLifeCycleStrategy.setCount(count);
+
+        Task totalCountTask = new Task();
+        totalCountTask.setTaskLifeCycleStrategy(totalCountDownLifeCycleStrategy);
+        totalCountTask.setTaskPointCalcStrategy(fixPointStrategy);
+        totalCountTask.setTaskDef(taskDef);
+
+        taskArrayList.add(totalCountTask);
+    }
+
+    private static void addRepeat2Task(String taskName, int point, int count) {
+        TaskDef taskDef;
+        FixPointStrategy fixPointStrategy;
+        taskDef = new TaskDef();
+        taskDef.setName(taskName);
+
+        fixPointStrategy = new FixPointStrategy();
+        fixPointStrategy.setPoint(point);
+
+        DailyCountDownLifeCycleStrategy dailyCountDownLifeCycleStrategy = new DailyCountDownLifeCycleStrategy();
+        dailyCountDownLifeCycleStrategy.setCount(count);
+
+        Task dailyTask = new Task();
+        dailyTask.setTaskLifeCycleStrategy(dailyCountDownLifeCycleStrategy);
+        dailyTask.setTaskPointCalcStrategy(fixPointStrategy);
+        dailyTask.setTaskDef(taskDef);
+
+        taskArrayList.add(dailyTask);
+    }
 
 }
