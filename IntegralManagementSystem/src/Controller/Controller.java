@@ -28,7 +28,7 @@ public class Controller {
         System.out.println("请输入要创建的task的类型，\n" +
                 "如果是一次性task，请输入 once taskname point \n" +
                 "如果是可重复Task，请输入 repeat1 taskname point lifeCycle \n" +
-                "如果是每日可重复Task，请输入 repeat2 taskname point lifeCycle \n");
+                "如果是每日可重复Task，请输入 repeat2 taskname point lifeCycle");
         String instr = input.next();
         String taskName;
         int point;

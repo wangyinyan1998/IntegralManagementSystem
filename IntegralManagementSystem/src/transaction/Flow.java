@@ -26,6 +26,6 @@ public class Flow {
 
     @Override
     public String toString() {
-        return desc+" - "+amount;
+        return desc+" : "+amount;
     }
 }
