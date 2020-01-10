@@ -2,7 +2,7 @@ package userTask;
 
 public class TaskDef {
     String name;
-    String description;
+    String description="";
 
     public String getName() {
         return name;

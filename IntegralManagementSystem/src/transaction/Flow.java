@@ -2,7 +2,7 @@ package transaction;
 
 public class Flow {
     int amount;
-    String desc;
+    String desc="";
 
     public Flow(String desc,int amount){
         this.desc = desc;

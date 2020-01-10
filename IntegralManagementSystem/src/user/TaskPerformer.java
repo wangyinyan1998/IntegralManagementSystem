@@ -3,8 +3,8 @@ package user;
 import transaction.Account;
 
 public class TaskPerformer {
-    String name;
-    Account account;
+    String name="";
+    Account account=new Account();
 
     public TaskPerformer(String name, Account account) {
         this.name = name;

@@ -20,11 +20,11 @@ public class ControllerTest {
     public void consume() {
     }
 
-    @org.junit.Test
+    @Test
     public void newItem() {
     }
 
-    @org.junit.Test
+    @Test
     public void checkFlow() {
     }
 
