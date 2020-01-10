@@ -7,7 +7,7 @@ import user.TaskPerformer;
 public class ConsumerTransaction extends Transaction {
     public boolean commit(Item item, TaskPerformer taskPerformer){
         int cost = item.getPointCost();
-        if (taskPerformer.getAccount().getBalance()>cost) {
+        if (taskPerformer.getAccount().getBalance()>=cost) {
             addFlow(taskPerformer,cost , item.getName());
             return true;
         }

@@ -47,8 +47,6 @@ public class Controller {
         String taskName;
         int point;
         int count;
-        TaskDef taskDef;
-        FixPointStrategy fixPointStrategy;
 
         switch (instr) {
             case "once":
@@ -139,13 +137,13 @@ public class Controller {
         System.out.println("您的积分已显示啦");
     }
 
-    public static void findCanDoTask(String username) {
+    public static int findCanDoTask(String username) {
         ArrayList<Task> canDoTaskList = new ArrayList<>();
         canDoTaskList.addAll(taskArrayList);
         TaskPerformer taskPerformer = findTaskPerformer(username);
         if (taskPerformer == null) {
             System.out.println("您的用户信息找不到啦");
-            return;
+            return 0;
         }
         ArrayList<UserTask> userTaskArrayList = PerformTaskTransaction.getUserTaskArrayList();
 
@@ -162,6 +160,31 @@ public class Controller {
         } else {
             System.out.println("没有待完成的任务啦，享受清闲时光吧！");
         }
+        return canDoTaskList.size();
+    }
+    public static int findCanNotDoTask(String username) {
+        ArrayList<Task> canNotDoTaskList = new ArrayList<>();
+        canNotDoTaskList.addAll(taskArrayList);
+        TaskPerformer taskPerformer = findTaskPerformer(username);
+        if (taskPerformer == null) {
+            return 0;
+        }
+        ArrayList<UserTask> userTaskArrayList = PerformTaskTransaction.getUserTaskArrayList();
+
+        for (UserTask userTask : userTaskArrayList) {
+            if (userTask.getTaskPerformer().equals(taskPerformer) && userTask.canDo()) {
+                canNotDoTaskList.remove(userTask.getTask());
+            }
+        }
+        if (canNotDoTaskList != null && canNotDoTaskList.size() != 0) {
+            System.out.println("您的已完成任务有：");
+            for (Task task : canNotDoTaskList) {
+                System.out.println(task.getTaskDef().getName());
+            }
+        } else {
+            System.out.println("您没有已完成任务哦~");
+        }
+        return canNotDoTaskList.size();
     }
 
     private static TaskPerformer findTaskPerformer(String username) {

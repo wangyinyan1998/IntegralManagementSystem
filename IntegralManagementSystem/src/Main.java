@@ -9,7 +9,7 @@ public class Main {
                 "如果您想新增一个用户，请输入 u username\n" +
                         "如果您想新增一个任务，请输入 t\n" +
                         "如果想完成一个任务，请输入  doTask taskname username\n" +
-                        "如果想查看某个用户的可做任务，请输入 fd username\n" +
+                        "如果想查看某个用户的任务状态信息，请输入 fd username\n" +
                         "如果想查看某个用户的当前积分，请输入 account username\n" +
                         "如果想查看某个用户的流水，请输入 flow username\n" +
                         "如果您想创建商品，请输入 item itemname cost\n" +
@@ -28,7 +28,9 @@ public class Main {
                     Controller.doTask(input.next(), input.next());
                     break;
                 case "fd":
-                    Controller.findCanDoTask(input.next());
+                    String user = input.next();
+                    Controller.findCanDoTask(user);
+                    Controller.findCanNotDoTask(user);
                     break;
                 case "account":
                     Controller.checkAccount(input.next());
