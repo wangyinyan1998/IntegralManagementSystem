@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
-    static ArrayList<Task> taskArrayList=new ArrayList<>();
+    static ArrayList<Task> taskArrayList = new ArrayList<>();
     static ArrayList<TaskPerformer> taskPerformers = new ArrayList<>();
     static ArrayList<Item> items = new ArrayList<>();
 
@@ -116,88 +116,90 @@ public class Controller {
         }
 
     }
-    public static void consume(String username,String itemname){
-        TaskPerformer taskPerformer=findTaskPerformer(username);
+
+    public static void consume(String username, String itemname) {
+        TaskPerformer taskPerformer = findTaskPerformer(username);
         Item item = findItem(itemname);
         ConsumerTransaction transaction = new ConsumerTransaction();
-        if (transaction.commit(item,taskPerformer)) {
+        if (transaction.commit(item, taskPerformer)) {
             System.out.println("您的商品已兑换~");
-        }else {
+        } else {
             System.out.println("您的商品兑换失败啦");
         }
     }
-    public static void newItem(String itemname,int cost){
+
+    public static void newItem(String itemname, int cost) {
         Item fdItem = findItem(itemname);
-        if (fdItem==null) {
+        if (fdItem == null) {
             Item item = new Item(itemname, itemname, cost);
             items.add(item);
         }
         System.out.println("您的商品新建成功啦");
     }
-    public static void checkFlow(String username){
+
+    public static void checkFlow(String username) {
         TaskPerformer taskPerformer = findTaskPerformer(username);
-        if (taskPerformer==null){
+        if (taskPerformer == null) {
             System.out.println("您的用户信息找不到啦");
             return;
         }
 
         List<Flow> flows = taskPerformer.getAccount().getFlows();
-        for (Flow flow:flows){
+        for (Flow flow : flows) {
             System.out.println(flow);
         }
         System.out.println("您的流水线已显示完全啦");
     }
-    public static void checkAccount(String username){
+
+    public static void checkAccount(String username) {
         TaskPerformer taskPerformer = findTaskPerformer(username);
-        if (taskPerformer==null){
+        if (taskPerformer == null) {
             System.out.println("您的用户信息找不到啦");
             return;
         }
         System.out.println(taskPerformer.getAccount().getBalance());
         System.out.println("您的积分已显示啦");
     }
-    public static void findCanDoTask(String username){
+
+    public static void findCanDoTask(String username) {
         ArrayList<Task> canDoTaskList = new ArrayList<>();
         canDoTaskList.addAll(taskArrayList);
         TaskPerformer taskPerformer = findTaskPerformer(username);
-        if (taskPerformer==null){
+        if (taskPerformer == null) {
             System.out.println("您的用户信息找不到啦");
             return;
         }
-        ArrayList<UserTask> userTaskArrayList = new ArrayList<>();
-        try{
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("usertask.txt")));
-            userTaskArrayList = (ArrayList<UserTask>)ois.readObject();
-            ois.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        for (UserTask userTask:userTaskArrayList){
+        ArrayList<UserTask> userTaskArrayList =PerformTaskTransaction.getUserTaskArrayList();
+
+        for (UserTask userTask : userTaskArrayList) {
             if (userTask.getTaskPerformer().equals(taskPerformer) && !userTask.canDo()) {
                 canDoTaskList.remove(userTask.getTask());
             }
         }
         System.out.println("您的待完成任务有：");
-        for (Task task:canDoTaskList){
+        for (Task task : canDoTaskList) {
             System.out.println(task.getTaskDef().getName());
         }
     }
-    private static TaskPerformer findTaskPerformer(String username){
-        for (TaskPerformer taskPerformer:taskPerformers){
+
+    private static TaskPerformer findTaskPerformer(String username) {
+        for (TaskPerformer taskPerformer : taskPerformers) {
             if (taskPerformer.getName().equals(username))
                 return taskPerformer;
         }
         return null;
     }
-    private static Item findItem(String itemname){
-        for (Item item:items){
+
+    private static Item findItem(String itemname) {
+        for (Item item : items) {
             if (item.getName().equals(itemname))
                 return item;
         }
         return null;
     }
-    private static Task findTask(String taskname){
-        for (Task task:taskArrayList){
+
+    private static Task findTask(String taskname) {
+        for (Task task : taskArrayList) {
             if (task.getTaskDef().getName().equals(taskname))
                 return task;
         }
