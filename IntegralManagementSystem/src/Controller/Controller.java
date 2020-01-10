@@ -164,7 +164,6 @@ public class Controller {
     }
     public static int findCanNotDoTask(String username) {
         ArrayList<Task> canNotDoTaskList = new ArrayList<>();
-        canNotDoTaskList.addAll(taskArrayList);
         TaskPerformer taskPerformer = findTaskPerformer(username);
         if (taskPerformer == null) {
             return 0;
@@ -172,8 +171,8 @@ public class Controller {
         ArrayList<UserTask> userTaskArrayList = PerformTaskTransaction.getUserTaskArrayList();
 
         for (UserTask userTask : userTaskArrayList) {
-            if (userTask.getTaskPerformer().equals(taskPerformer) && userTask.canDo()) {
-                canNotDoTaskList.remove(userTask.getTask());
+            if (userTask.getTaskPerformer().equals(taskPerformer) && !userTask.canDo()) {
+                canNotDoTaskList.add(userTask.getTask());
             }
         }
         if (canNotDoTaskList != null && canNotDoTaskList.size() != 0) {
